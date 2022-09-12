@@ -21,7 +21,10 @@ const routes = [
     name: 'admin',
     component: Admin.AdminLayout,
     children: [
-      { path: 'dashboard', name: 'dashboard', component: Admin.Dashboard }
+      { path: 'dashboard', name: 'dashboard', component: Admin.Dashboard },
+      { path: 'user/add', component: Admin.UserAdd },
+      { path: 'user/edit/:id', component: Admin.UserEdit, props: true },
+      { path: 'user/index', component: Admin.UserIndex }
     ]
   },
   {
