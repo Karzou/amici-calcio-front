@@ -1,32 +1,33 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/public/Home.vue'
-import Contact from '../views/public/Contact.vue'
-import NotFound from '../views/public/NotFound.vue'
-import PublicLayout from '../views/public/Layout.vue'
+
+import * as Public from '../views/public'
+import * as Admin from '../views/admin'
 
 const routes = [
 
   {
     path: '/',
     name: 'public',
-    component: PublicLayout,
+    component: Public.PublicLayout,
     children: [
-      {
-        path: '/',
-        name: 'home',
-        component: Home
-      },
-      {
-        path: '/contact',
-        name: 'contact',
-        component: Contact
-      }
+      { path: '', name: 'home', component: Public.Home },
+      { path: 'contact', name: 'contact', component: Public.Contact },
+      { path: 'team', name: 'team', component: Public.Team },
+      { path: 'history', name: 'history', component: Public.History }
+    ]
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: Admin.AdminLayout,
+    children: [
+      { path: 'dashboard', name: 'dashboard', component: Admin.Dashboard }
     ]
   },
   {
     //404
     path: '/:pathMatch(.*)*',
-    component: NotFound
+    component: Public.NotFound
   }
 ]
 

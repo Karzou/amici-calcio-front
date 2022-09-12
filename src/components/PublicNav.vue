@@ -1,8 +1,11 @@
 <template>
-    <img alt="Vue logo" src="../assets/logo.png"/>
+    <img alt="Vue logo" src="../assets/amici-logo.png">
     <nav>
         <router-link to="/">Accueil </router-link>
         <router-link to="/contact">Contact </router-link>
+        <router-link to="/team">Team </router-link>
+        <router-link to="/history">History </router-link>
+        <router-link to="/admin/dashboard">Admin </router-link>
     </nav>
 </template>
 
