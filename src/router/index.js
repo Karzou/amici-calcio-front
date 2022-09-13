@@ -38,9 +38,10 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: Login,
+    component: Login
+    //,
     //beforeEnter pour fermer une mono route, pas les enfants
-    beforeEnter: authGuard
+    //beforeEnter: authGuard
   },
   {
     //404
@@ -52,6 +53,16 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+
+//Vérouillage de la partie admin
+router.beforeEach((to, from, next) => {
+  console.log(to.matched[0].name)
+  if (to.matched[0].name == 'admin') {
+    authGuard()
+  }
+  next()
 })
 
 export default router

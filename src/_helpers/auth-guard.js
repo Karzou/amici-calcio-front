@@ -8,5 +8,5 @@ export function authGuard(to) {
         return true
     }
 
-    router.push('/')
+    router.push('/login')
 }
