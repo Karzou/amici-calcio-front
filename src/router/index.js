@@ -1,3 +1,5 @@
+//master
+
 import { createRouter, createWebHistory } from 'vue-router'
 
 import * as Public from '../views/public'
