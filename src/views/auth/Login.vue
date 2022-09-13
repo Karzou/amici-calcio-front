@@ -31,8 +31,10 @@ export default {
     },
     methods: {
         login(){
-            console.log('stop.form')
-            console.log(this.user)
+            //console.log('stop.form')
+            //console.log(this.user)
+            accountService.saveToken('12345')    // pour le dev
+            this.$router.push('admin/dashboard') // pour le dev
 
           /*  accountService.login(this.user)
                 .then(res => {

@@ -16,6 +16,10 @@ let saveToken = (token) => {
     localStorage.setItem('token', token)
 }
 
+let getToken = () => {
+    return localStorage.getItem('token')
+} 
+
 let isLogged = () => {
     let token = localStorage.getItem('token')
     return !!token  // retourne false si pas de token / true si token
@@ -25,5 +29,6 @@ export const accountService = {
     login,
     logout,
     saveToken,
+    getToken,
     isLogged
 }
