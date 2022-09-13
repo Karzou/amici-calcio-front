@@ -6,6 +6,10 @@ import * as Public from '../views/public'
 import * as Admin from '../views/admin'
 import Login from '../views/auth/Login.vue'
 
+//import avec crochet car export function
+import { authGuard } from '../_helpers/auth-guard'
+
+
 const routes = [
 
   {
@@ -34,7 +38,9 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: Login
+    component: Login,
+    //beforeEnter pour fermer une mono route, pas les enfants
+    beforeEnter: authGuard
   },
   {
     //404
