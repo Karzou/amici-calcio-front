@@ -56,7 +56,7 @@ const router = createRouter({
 })
 
 
-//Vérouillage de la partie admin
+//Vérouillage de la partie admin.
 router.beforeEach((to, from, next) => {
   console.log(to.matched[0].name)
   if (to.matched[0].name == 'admin') {
