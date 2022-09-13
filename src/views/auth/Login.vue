@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { accountService } from '../../_services'
 export default {
     name: 'Login',
     data() {
@@ -32,6 +33,13 @@ export default {
         login(){
             console.log('stop.form')
             console.log(this.user)
+
+          /*  accountService.login(this.user)
+                .then(res => {
+                    accountService.saveToken(res.data.access_token)
+                    this.$router.push('/admin/dashboard')
+                })
+                .catch(err => console.log(err)) */
         }
     }
 }
