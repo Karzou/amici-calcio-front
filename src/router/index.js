@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import * as Public from '../views/public'
 import * as Admin from '../views/admin'
+import Login from '../views/auth/Login.vue'
 
 const routes = [
 
@@ -29,6 +30,11 @@ const routes = [
       { path: 'user/index', component: Admin.UserIndex },
       { path: '/:pathMatch(.*)*', redirect: '/admin/dashboard' }
     ]
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
   },
   {
     //404
