@@ -23,8 +23,9 @@ const routes = [
     children: [
       { path: 'dashboard', name: 'dashboard', component: Admin.Dashboard },
       { path: 'user/add', component: Admin.UserAdd },
-      { path: 'user/edit/:id', component: Admin.UserEdit, props: true },
-      { path: 'user/index', component: Admin.UserIndex }
+      { path: 'user/edit/:id(\\d+)', component: Admin.UserEdit, props: true },
+      { path: 'user/index', component: Admin.UserIndex },
+      { path: '/:pathMatch(.*)*', redirect: '/admin/dashboard' }
     ]
   },
   {
